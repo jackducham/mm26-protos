@@ -3,9 +3,9 @@ syntax = "proto3";
 package player_communication;
 
 option java_package = "mech.mania.engine.server.communication.player.model";
-option java_outer_classname = "PlayerDecisionProtos";
+option java_outer_classname = "PlayerTurnProtos";
 
-message PlayerDecision {
+message PlayerTurn {
     string playerUuid = 1;
     string playerName = 2;
     //TODO: Insert data needed here
