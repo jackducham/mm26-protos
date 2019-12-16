@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package visualizer;
 
-option java_package = "mech.mania.MM26GameEngine.visualizerCommunication";
+option java_package = "visualizer.model";
 option java_outer_classname = "VisualizerTurnProtos";
 
 message VisualizerTurn{
