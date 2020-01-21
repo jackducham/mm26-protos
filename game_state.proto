@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package game_state;
+
+option java_package = "mech.mania.engine.game";
+option java_outer_classname = "GameStateProtos";
+
+import "board_protos.proto";
+import "character_protos.proto";
+
+message GameState {
+    // TODO
+}

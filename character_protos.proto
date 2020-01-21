@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package character_protos;
+
+option java_package = "mech.mania.engine.game.characters";
+option java_outer_classname = "CharacterProtos";
+
+import "board_protos.proto";
+
+message Enemy {
+    // TODO
+}
+
+message Player {
+    // TODO
+}
