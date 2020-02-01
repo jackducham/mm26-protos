@@ -4,8 +4,9 @@ package visualizer;
 
 option java_package = "mech.mania.engine.server.communication.visualizer.model";
 option java_outer_classname = "VisualizerTurnProtos";
+option csharp_namespace = "MM26.IO";
 
-message VisualizerTurn{
+message VisualizerTurn {
     int64 turnNumber = 1;
     //TODO: Insert data needed here
 }
