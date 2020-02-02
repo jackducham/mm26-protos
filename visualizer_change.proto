@@ -7,5 +7,5 @@ option java_outer_classname = "VisualizerTurnProtos";
 option csharp_namespace = "MM26.IO";
 
 message VisualizerChange {
-    int64 changeNumber = 1;
+    int64 change_number = 1;
 }
