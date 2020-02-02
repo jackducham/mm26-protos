@@ -6,6 +6,4 @@ option java_package = "mech.mania.MM26GameEngine.visualizerCommunication";
 option java_outer_classname = "VisualizerTurnProtos";
 option csharp_namespace = "MM26.IO";
 
-message VisualizerChange {
-    int64 changeNumber = 1;
-}
+message VisualizerChange { int64 change_number = 1; }
