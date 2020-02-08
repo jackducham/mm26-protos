@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package infra;
-
-option java_package = "mech.mania.engine.server.communication.infra.model";
-option java_outer_classname = "InfraStatusProtos";
-
-message InfraStatus { int32 status = 1; }
