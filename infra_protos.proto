@@ -10,4 +10,7 @@ message InfraPlayer {
   string player_ip = 2;
 }
 
-message InfraStatus { int32 status = 1; }
+message InfraStatus {
+  int32 status = 1;
+  string message = 2;
+}
