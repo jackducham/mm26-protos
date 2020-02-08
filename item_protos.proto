@@ -5,30 +5,54 @@ package item_protos;
 option java_package = "mech.mania.engine.game.items";
 option java_outer_classname = "ItemProtos";
 
+message Item {
+    // Stand-in for inheritance
+    oneof item {
+        Clothes clothes = 1;
+        Hat hat = 2;
+        Shoes shoes = 3;
+        Weapon weapon = 4;
+        Consumable consumable = 5;
+    }
+}
+
 message Clothes {
-    // TODO
+    StatusModifier stats = 1;
 }
 
 message Hat {
-    // TODO
+    enum HatEffect {
+        TEST = 0; // TOOD: add actual hat effects
+    }
+    HatEffect hat_effect = 1;
 }
 
 message Shoes {
-    // TODO
+    StatusModifier stats = 1;
 }
 
 message Weapon {
-    // TODO
+    int range = 1;
+    int splashRadius = 1;
+    TempStatusModifier onHitEffect = 1;
 }
 
 message Consumable {
-    // TODO
+    TempStatusModifier effect = 1;
 }
 
 message StatusModifier {
-    // TODO
+    int speed_change = 1;
+    int health_change = 2;
+    int experience_change = 3;
+    int magic_damage_change = 4;
+    int physical_damage_change = 5;
+    int magic_defense_change = 6;
+    int physical_defense_change = 7;
 }
 
 message TempStatusModifier {
-    // TODO
+    StatusModifier stats = 1;
+    double damage_per_turn = 2;
+    int duration = 3;
 }

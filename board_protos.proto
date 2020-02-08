@@ -6,6 +6,7 @@ option java_package = "mech.mania.engine.game.board";
 option java_outer_classname = "BoardProtos";
 
 import "character_protos.proto";
+import "item_protos.proto";
 
 message Board {
     int32 rows = 1;
@@ -16,10 +17,19 @@ message Board {
 }
 
 message Tile {
-    // TODO
+    enum TileType {
+        VOID = 0,
+        BLANK = 1,
+        IMPASSIBLE = 2,
+        INN = 3,
+        PORTAL = 4;
+    }
+    TileType tile_type = 1;
+    repeated Item items = 2;
 }
 
 message Position {
-    int32 x = 1;
-    int32 y = 2;
+    Board board = 1;
+    int32 x = 2;
+    int32 y = 3;
 }
