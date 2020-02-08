@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package infra;
+
+option java_package = "mech.mania.engine.server.communication.infra.model";
+option java_outer_classname = "InfraPlayerProtos";
+
+message InfraPlayer {
+  string player_name = 1;
+  string player_ip = 2;
+}
