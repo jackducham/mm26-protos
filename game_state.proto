@@ -11,4 +11,5 @@ import "character_protos.proto";
 
 message GameState {
     // TODO
+    int64 turn_number = 1;
 }
