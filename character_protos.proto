@@ -6,11 +6,26 @@ option java_package = "mech.mania.engine.game.characters";
 option java_outer_classname = "CharacterProtos";
 
 import "board_protos.proto";
+import "item_protos.proto";
 
 message Enemy {
-    // TODO
+    double currentHealth = 1;
+    int experience = 2;
+    Position position = 3;
+    Weapon weapon = 4;
+    repeated Item drops = 5;
 }
 
 message Player {
-    // TODO
+    string name = 1;
+    Hat hat = 2;
+    Clothes clothes = 3;
+    Shoes shoes = 4;
+    Weapon weapon = 5;
+    repeated Item inventory = 6;
+
+    double currentHealth = 7;
+    int experience = 8;
+    Position position = 9;
+    repeated TempStatusModifier active_effects = 10;
 }
