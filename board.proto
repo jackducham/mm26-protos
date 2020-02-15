@@ -14,6 +14,8 @@ message Board {
     repeated Tile grid = 3; // Protos only have 1D lists
     repeated character.Enemy enemies = 4;
     repeated character.Player players = 5;
+    repeated character.Position portals = 6;
+    string boardId = 7;
 }
 
 message Tile {

@@ -18,27 +18,34 @@ message Item {
 
 message Clothes {
     StatusModifier stats = 1;
+    int32 maxStack = 2;
 }
 
 message Hat {
     enum HatEffect {
         TEST = 0; // TOOD: add actual hat effects
     }
-    HatEffect hat_effect = 1;
+    StatusModifier stats = 1;
+    int32 maxStack = 2;
+    HatEffect hat_effect = 3;
 }
 
 message Shoes {
     StatusModifier stats = 1;
+    int32 maxStack = 2;
 }
 
 message Weapon {
-    int32 range = 1;
-    int32 splashRadius = 2;
-    TempStatusModifier onHitEffect = 3;
+    StatusModifier stats = 1;
+    int32 maxStack = 2;
+    int32 range = 3;
+    int32 splashRadius = 4;
+    TempStatusModifier onHitEffect = 5;
 }
 
 message Consumable {
     TempStatusModifier effect = 1;
+    int32 maxStack = 2;
 }
 
 message StatusModifier {
