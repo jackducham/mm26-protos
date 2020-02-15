@@ -32,9 +32,9 @@ message Shoes {
 }
 
 message Weapon {
-    int range = 1;
-    int splashRadius = 1;
-    TempStatusModifier onHitEffect = 1;
+    int32 range = 1;
+    int32 splashRadius = 2;
+    TempStatusModifier onHitEffect = 3;
 }
 
 message Consumable {
@@ -42,17 +42,17 @@ message Consumable {
 }
 
 message StatusModifier {
-    int speed_change = 1;
-    int health_change = 2;
-    int experience_change = 3;
-    int magic_damage_change = 4;
-    int physical_damage_change = 5;
-    int magic_defense_change = 6;
-    int physical_defense_change = 7;
+    int32 speed_change = 1;
+    int32 health_change = 2;
+    int32 experience_change = 3;
+    int32 magic_damage_change = 4;
+    int32 physical_damage_change = 5;
+    int32 magic_defense_change = 6;
+    int32 physical_defense_change = 7;
 }
 
 message TempStatusModifier {
     StatusModifier stats = 1;
     double damage_per_turn = 2;
-    int duration = 3;
+    int32 duration = 3;
 }

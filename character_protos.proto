@@ -5,12 +5,11 @@ package character_protos;
 option java_package = "mech.mania.engine.game.characters";
 option java_outer_classname = "CharacterProtos";
 
-import "board_protos.proto";
 import "item_protos.proto";
 
 message Enemy {
     double currentHealth = 1;
-    int experience = 2;
+    int32 experience = 2;
     Position position = 3;
     Weapon weapon = 4;
     repeated Item drops = 5;
@@ -25,7 +24,7 @@ message Player {
     repeated Item inventory = 6;
 
     double currentHealth = 7;
-    int experience = 8;
+    int32 experience = 8;
     Position position = 9;
     repeated TempStatusModifier active_effects = 10;
 }

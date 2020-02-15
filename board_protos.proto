@@ -18,10 +18,10 @@ message Board {
 
 message Tile {
     enum TileType {
-        VOID = 0,
-        BLANK = 1,
-        IMPASSIBLE = 2,
-        INN = 3,
+        VOID = 0;
+        BLANK = 1;
+        IMPASSIBLE = 2;
+        INN = 3;
         PORTAL = 4;
     }
     TileType tile_type = 1;
