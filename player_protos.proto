@@ -22,6 +22,6 @@ message PlayerTurn {
   game_state.GameState game_state = 4;
   oneof test{
     string test1 = 5;
-    int test2 = 6;
+    int32 test2 = 6;
   }
 }
