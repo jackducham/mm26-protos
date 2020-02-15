@@ -1,32 +1,32 @@
 syntax = "proto3";
 
-package character_protos;
+package character;
 
 option java_package = "mech.mania.engine.game.characters";
 option java_outer_classname = "CharacterProtos";
 
-import "item_protos.proto";
+import "item.proto";
 
 message Enemy {
     double currentHealth = 1;
     int32 experience = 2;
     Position position = 3;
-    Weapon weapon = 4;
-    repeated Item drops = 5;
+    item.Weapon weapon = 4;
+    repeated item.Item drops = 5;
 }
 
 message Player {
     string name = 1;
-    Hat hat = 2;
-    Clothes clothes = 3;
-    Shoes shoes = 4;
-    Weapon weapon = 5;
-    repeated Item inventory = 6;
+    item.Hat hat = 2;
+    item.Clothes clothes = 3;
+    item.Shoes shoes = 4;
+    item.Weapon weapon = 5;
+    repeated item.Item inventory = 6;
 
     double currentHealth = 7;
     int32 experience = 8;
     Position position = 9;
-    repeated TempStatusModifier active_effects = 10;
+    repeated item.TempStatusModifier active_effects = 10;
 }
 
 message Position {

@@ -6,8 +6,8 @@ option java_package = "mech.mania.engine.game";
 option java_outer_classname = "GameStateProtos";
 option csharp_namespace = "MM26.IO";
 
-import "board_protos.proto";
-import "character_protos.proto";
+import "board.proto";
+import "character.proto";
 
 message GameState {
     // TODO

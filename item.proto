@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package item_protos;
+package item;
 
 option java_package = "mech.mania.engine.game.items";
 option java_outer_classname = "ItemProtos";

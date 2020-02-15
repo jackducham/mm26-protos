@@ -1,18 +1,19 @@
 syntax = "proto3";
 
-package board_protos;
+package board;
 
 option java_package = "mech.mania.engine.game.board";
 option java_outer_classname = "BoardProtos";
 
-import "character_protos.proto";
+import "item.proto";
+import "character.proto";
 
 message Board {
     int32 rows = 1;
     int32 columns = 2;
     repeated Tile grid = 3; // Protos only have 1D lists
-    repeated Enemy enemies = 4;
-    repeated Player players = 5;
+    repeated character.Enemy enemies = 4;
+    repeated character.Player players = 5;
 }
 
 message Tile {
@@ -24,5 +25,5 @@ message Tile {
         PORTAL = 4;
     }
     TileType tile_type = 1;
-    repeated Item items = 2;
+    repeated item.Item items = 2;
 }

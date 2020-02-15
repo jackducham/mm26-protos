@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package visualizer;
+package game_change;
 
 option java_package = "mech.mania.engine.server.communication.visualizer.model";
 option java_outer_classname = "VisualizerProtos";
