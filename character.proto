@@ -4,6 +4,7 @@ package character;
 
 option java_package = "mech.mania.engine.game.characters";
 option java_outer_classname = "CharacterProtos";
+option csharp_namespace = "MM26.IO.Models";
 
 import "item.proto";
 

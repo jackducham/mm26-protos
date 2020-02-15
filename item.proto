@@ -4,6 +4,7 @@ package item;
 
 option java_package = "mech.mania.engine.game.items";
 option java_outer_classname = "ItemProtos";
+option csharp_namespace = "MM26.IO.Models";
 
 message Item {
     // Stand-in for inheritance
