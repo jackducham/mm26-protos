@@ -6,7 +6,6 @@ option java_package = "mech.mania.engine.game.board";
 option java_outer_classname = "BoardProtos";
 
 import "character_protos.proto";
-import "item_protos.proto";
 
 message Board {
     int32 rows = 1;
@@ -26,10 +25,4 @@ message Tile {
     }
     TileType tile_type = 1;
     repeated Item items = 2;
-}
-
-message Position {
-    Board board = 1;
-    int32 x = 2;
-    int32 y = 3;
 }
