@@ -5,20 +5,23 @@ package player_communication;
 option java_package = "mech.mania.engine.server.communication.player.model";
 option java_outer_classname = "PlayerProtos";
 
+import "game_state.proto";
+
 // Proto sent from player to engine
 message PlayerDecision {
   string player_uuid = 1;
   string player_name = 2;
-  int32 turn = 3;
   // TODO: Insert data needed here
-  int32 increment = 4;
+  int32 increment = 3;
 }
 
 // Proto sent from engine to player
 message PlayerTurn {
-  string player_uuid = 1;
-  string player_name = 2;
-  int32 turn = 3;
-  // TODO: Insert data needed here
-  int32 increment = 4;
+  string player_name = 1;
+  int32 increment = 2; // TODO: What is this?
+  game_state.GameState game_state = 4;
+  oneof test{
+    string test1 = 5;
+    int test2 = 6;
+  }
 }

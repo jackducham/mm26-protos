@@ -10,10 +10,10 @@ import "board.proto";
 import "character.proto";
 
 message GameState {
-    // TODO
-    int64 state_number = 1;
+    int64 turn_number = 1;
+    // TODO: add stuff
 }
 
 message GameChange {
     int64 change_number = 1;
-  }
+}
