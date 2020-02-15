@@ -4,7 +4,7 @@ package game_state;
 
 option java_package = "mech.mania.engine.game";
 option java_outer_classname = "GameStateProtos";
-option csharp_namespace = "MM26.IO";
+option csharp_namespace = "MM26.IO.Models";
 
 import "board.proto";
 import "character.proto";
@@ -13,4 +13,8 @@ message GameState {
     int64 turn_number = 1;
     board.Board pvpBoard = 2;
     map<string, board.Board> playerIdToBoardMap = 3;
+}
+
+message GameChange {
+    int64 change_number = 1;
 }
