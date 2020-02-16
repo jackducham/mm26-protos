@@ -8,45 +8,38 @@ option csharp_namespace = "MM26.IO.Models";
 
 message Item {
     // Stand-in for inheritance
+    int maxStack = 1;
+    StatusModifier stats = 2;
     oneof item {
-        Clothes clothes = 1;
-        Hat hat = 2;
-        Shoes shoes = 3;
-        Weapon weapon = 4;
-        Consumable consumable = 5;
+        Clothes clothes = 3;
+        Hat hat = 4;
+        Shoes shoes = 5;
+        Weapon weapon = 6;
+        Consumable consumable = 7;
     }
 }
 
 message Clothes {
-    StatusModifier stats = 1;
-    int32 maxStack = 2;
 }
 
 message Hat {
     enum HatEffect {
         TEST = 0; // TOOD: add actual hat effects
     }
-    StatusModifier stats = 1;
-    int32 maxStack = 2;
-    HatEffect hat_effect = 3;
+    HatEffect hat_effect = 1;
 }
 
 message Shoes {
-    StatusModifier stats = 1;
-    int32 maxStack = 2;
 }
 
 message Weapon {
-    StatusModifier stats = 1;
-    int32 maxStack = 2;
-    int32 range = 3;
-    int32 splashRadius = 4;
-    TempStatusModifier onHitEffect = 5;
+    int32 range = 2;
+    int32 splashRadius = 3;
+    TempStatusModifier onHitEffect = 4;
 }
 
 message Consumable {
-    TempStatusModifier effect = 1;
-    int32 maxStack = 2;
+    //use polymorphism for TempStatusModifier
 }
 
 message StatusModifier {
