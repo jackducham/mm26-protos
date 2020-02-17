@@ -20,26 +20,30 @@ message Item {
 }
 
 message Clothes {
+    StatusModifier stats = 1;
 }
 
 message Hat {
     enum HatEffect {
         TEST = 0; // TOOD: add actual hat effects
     }
-    HatEffect hat_effect = 1;
+    StatusModifier stats = 1;
+    HatEffect hat_effect = 2;
 }
 
 message Shoes {
+    StatusModifier stats = 1;
 }
 
 message Weapon {
+    StatusModifier stats = 1;
     int32 range = 2;
     int32 splashRadius = 3;
     TempStatusModifier onHitEffect = 4;
 }
 
 message Consumable {
-    //use polymorphism for TempStatusModifier
+    TempStatusModifier stats = 1;
 }
 
 message StatusModifier {
