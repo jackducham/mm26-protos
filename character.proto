@@ -17,17 +17,18 @@ message Enemy {
 }
 
 message Player {
-    string name = 1;
-    item.Hat hat = 2;
-    item.Clothes clothes = 3;
-    item.Shoes shoes = 4;
-    item.Weapon weapon = 5;
-    repeated item.Item inventory = 6;
+    double currentHealth = 1;
+    int32 experience = 2;
+    Position position = 3;
+    item.Weapon weapon = 4;
 
-    double currentHealth = 7;
-    int32 experience = 8;
-    Position position = 9;
-    repeated item.TempStatusModifier active_effects = 10;
+    int32 inventorySize = 5;
+    string name = 6;
+    item.Hat hat = 7;
+    item.Clothes clothes = 8;
+    item.Shoes shoes = 9;
+    repeated item.Item inventory = 10;
+    repeated item.TempStatusModifier activeEffects = 11;
 }
 
 message Position {
