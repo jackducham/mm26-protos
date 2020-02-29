@@ -16,7 +16,7 @@ message Board {
     repeated character.Enemy enemies = 4;
     repeated character.Player players = 5;
     repeated character.Position portals = 6;
-    string boardId = 7;
+    string board_id = 7;
 }
 
 message Tile {

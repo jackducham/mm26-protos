@@ -9,7 +9,7 @@ option csharp_namespace = "MM26.IO.Models";
 import "item.proto";
 
 message Enemy {
-    double currentHealth = 1;
+    double current_health = 1;
     int32 experience = 2;
     Position position = 3;
     item.Weapon weapon = 4;
@@ -17,7 +17,7 @@ message Enemy {
 }
 
 message Player {
-    double currentHealth = 1;
+    double current_health = 1;
     int32 experience = 2;
     Position position = 3;
     item.Weapon weapon = 4;

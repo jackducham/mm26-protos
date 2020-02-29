@@ -8,7 +8,7 @@ option csharp_namespace = "MM26.IO.Models";
 
 message Item {
   // Stand-in for inheritance
-  int32 maxStack = 1;
+  int32 max_stack = 1;
   StatusModifier stats = 2;
   oneof item {
     Clothes clothes = 3;
@@ -34,8 +34,8 @@ message Shoes { StatusModifier stats = 1; }
 message Weapon {
   StatusModifier stats = 1;
   int32 range = 2;
-  int32 splashRadius = 3;
-  TempStatusModifier onHitEffect = 4;
+  int32 splash_radius = 3;
+  TempStatusModifier on_hit_effect = 4;
 }
 
 message Consumable { TempStatusModifier stats = 1; }
