@@ -8,27 +8,30 @@ option csharp_namespace = "MM26.IO.Models";
 
 import "item.proto";
 
-message Monster {
+message Character {
     double current_health = 1;
     int32 experience = 2;
     Position position = 3;
-    item.Weapon weapon = 4;
-    repeated item.Item drops = 5;
+    Position spawn_point = 4;
+    item.Weapon weapon = 5;
+    repeated item.TempStatusModifier activeEffects = 6;
+    map<string, double> tagged_players_damage = 7; // Maps from player name to damage
+    bool is_dead = 8;
+    int32 ticks_since_death = 9;
+    string name = 10;
+}
+
+message Monster {
+    Character character = 1;
+    repeated item.Item drops = 2;
 }
 
 message Player {
-    double current_health = 1;
-    int32 experience = 2;
-    Position position = 3;
-    item.Weapon weapon = 4;
-
-    int32 inventorySize = 5;
-    string name = 6;
-    item.Hat hat = 7;
-    item.Clothes clothes = 8;
-    item.Shoes shoes = 9;
-    repeated item.Item inventory = 10;
-    repeated item.TempStatusModifier activeEffects = 11;
+    Character character = 1;
+    item.Hat hat = 2;
+    item.Clothes clothes = 3;
+    item.Shoes shoes = 4;
+    repeated item.Item inventory = 5;
 }
 
 message Position {
