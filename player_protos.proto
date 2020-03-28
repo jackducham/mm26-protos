@@ -8,7 +8,7 @@ option java_outer_classname = "PlayerProtos";
 import "game_state.proto";
 
 // Proto sent from player to engine
-message CharacterDecision {
+message PlayerDecision {
   enum DecisionType{
     NONE = 0;
     MOVE = 1;
