@@ -12,7 +12,7 @@ import "character.proto";
 message GameState {
   int64 state_id = 1;
   board.Board pvpBoard = 2;
-  map<string, board.Board> playerIdToBoardMap = 3;
+  repeated board.Board playerBoards = 3;
 }
 
 message GameChange { int64 change_id = 1; }
