@@ -24,8 +24,7 @@ message Tile {
         VOID = 0;
         BLANK = 1;
         IMPASSIBLE = 2;
-        INN = 3;
-        PORTAL = 4;
+        PORTAL = 3;
     }
     TileType tile_type = 1;
     repeated item.Item items = 2;
