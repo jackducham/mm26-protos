@@ -9,7 +9,7 @@ option csharp_namespace = "MM26.IO.Models";
 import "item.proto";
 
 message Character {
-    double current_health = 1;
+    int32 current_health = 1;
     int32 experience = 2;
     Position position = 3;
     Position spawn_point = 4;

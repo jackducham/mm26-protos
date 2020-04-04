@@ -38,7 +38,10 @@ message Weapon {
   TempStatusModifier on_hit_effect = 4;
 }
 
-message Consumable { TempStatusModifier stats = 1; }
+message Consumable { 
+  TempStatusModifier effect = 1; 
+  int32 stacks = 2;
+}
 
 message StatusModifier {
   int32 speed_change = 1;
@@ -52,6 +55,6 @@ message StatusModifier {
 
 message TempStatusModifier {
   StatusModifier stats = 1;
-  double damage_per_turn = 2;
+  int32 damage_per_turn = 2;
   int32 duration = 3;
 }
