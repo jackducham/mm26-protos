@@ -6,6 +6,7 @@ option java_package = "mech.mania.engine.server.communication.player.model";
 option java_outer_classname = "PlayerProtos";
 
 import "game_state.proto";
+import "character.proto";
 
 // Proto sent from player to engine
 message PlayerDecision {
@@ -20,7 +21,7 @@ message PlayerDecision {
   }
   DecisionType decisionType = 1;
   
-  Position targetPosition = 2; // For MOVE, ATTACK
+  character.Position targetPosition = 2; // For MOVE, ATTACK
   int32 index = 3; // For TRAVEL, DROP, EQUIP, PICKUP
 }
 
