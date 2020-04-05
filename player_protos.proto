@@ -14,7 +14,7 @@ message PlayerDecision {
     NONE = 0;
     MOVE = 1;
     ATTACK = 2;
-    TRAVEL = 3;
+    PORTAL = 3;
     DROP = 4;
     EQUIP = 5;
     PICKUP = 6;
