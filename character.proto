@@ -15,7 +15,7 @@ message Character {
     Position spawn_point = 4;
     item.Weapon weapon = 5;
     repeated item.TempStatusModifier activeEffects = 6;
-    map<string, double> tagged_players_damage = 7; // Maps from player name to damage
+    map<string, int32> tagged_players_damage = 7; // Maps from player name to damage
     bool is_dead = 8;
     int32 ticks_since_death = 9;
     string name = 10;
