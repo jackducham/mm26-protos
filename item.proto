@@ -35,8 +35,9 @@ message Weapon {
   StatusModifier stats = 1;
   int32 range = 2;
   int32 splash_radius = 3;
-  int32 initial_damage = 4;
-  TempStatusModifier on_hit_effect = 5;
+  int32 magic_damage = 4;
+  int32 physical_damage = 5;
+  TempStatusModifier on_hit_effect = 6;
 }
 
 message Consumable { 
