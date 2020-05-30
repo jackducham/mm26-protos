@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package game;
+
+option java_package = "mech.mania.engine.game";
+option java_outer_classname = "VisualizerProtos";
+option csharp_namespace = "MM26.IO.Models";
+
+import "character.proto";
+import "item.proto";
+
+message VisualizerChange {
+    map<string, player_protos.CharacterDecision> decisions = 1;
+    map<string, character.Character> new_players = 3;
+    map<string, CharacterChange> characterStatChanges = 4;
+}
+
+message CharacterChange {
+    int32 current_health_change = 1;
+    int32 experience_change = 2;
+    
+    item.Weapon new_weapon = 3;
+    repeated item.TempStatusModifier new_modifiers = 4;
+
+    bool died = 5;
+    bool respawned = 6;
+
+    int32 changed_speed_effect = 7;
+    int32 changed_health_effect = 8;
+    int32 changed_experience_effect = 9;
+    int32 changed_magic_defense_effect = 10;
+    int32 changed_physical_defense_effect = 11;
+    int32 changed_magic_damage_effect = 12;
+    int32 changed_physical_damage_effect = 13;
+
+    repeated character.Position path = 14;
+}
