@@ -4,6 +4,7 @@ package player_communication;
 
 option java_package = "mech.mania.engine.server.communication.player.model";
 option java_outer_classname = "PlayerProtos";
+option csharp_namespace = "MM26.IO.Models";
 
 import "game_state.proto";
 import "character.proto";
@@ -20,7 +21,7 @@ message PlayerDecision {
     PICKUP = 6;
   }
   DecisionType decisionType = 1;
-  
+
   character.Position targetPosition = 2; // For MOVE, ATTACK
   int32 index = 3; // For TRAVEL, DROP, EQUIP, PICKUP
 }

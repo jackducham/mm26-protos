@@ -10,19 +10,20 @@ import "item.proto";
 import "character.proto";
 
 message Board {
-    int32 rows = 1;
-    int32 columns = 2;
-    repeated Tile grid = 3; // Protos only have 1D lists (row-major)
-    repeated character.Position portals = 4;
+  int32 rows = 1;
+  int32 columns = 2;
+  repeated Tile grid = 3; // Protos only have 1D lists (row-major)
+  repeated character.Position portals = 4;
 }
 
 message Tile {
-    enum TileType {
-        VOID = 0;
-        BLANK = 1;
-        IMPASSIBLE = 2;
-        PORTAL = 3;
-    }
-    TileType tile_type = 1;
-    repeated item.Item items = 2;
+  enum TileType {
+    VOID = 0;
+    BLANK = 1;
+    IMPASSIBLE = 2;
+    PORTAL = 3;
+  }
+
+  TileType tile_type = 1;
+  repeated item.Item items = 2;
 }
