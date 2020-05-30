@@ -11,9 +11,9 @@ import "character.proto";
 
 message GameState {
   int64 state_id = 1;
-  map<string, board.Board> boardNames = 2;
-  map<string, character.Player> playerNames = 3;
-  map<string, character.Monster> monsterNames = 4;
+  map<string, board.Board> board_names = 2;
+  map<string, character.Player> player_names = 3;
+  map<string, character.Monster> monster_names = 4;
 }
 
 message GameChange { int64 change_id = 1; }
