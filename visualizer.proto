@@ -19,7 +19,7 @@ message CharacterChange {
     bool died = 1;
     bool respawned = 2;
 
-    character.Character.DecisionType decisionType = 3;
+    //character.Character.DecisionType decisionType = 3;
 
     repeated character.Position path = 4;
 }
