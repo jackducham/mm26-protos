@@ -42,3 +42,13 @@ message Position {
   int32 x = 2;
   int32 y = 3;
 }
+
+enum DecisionType{
+  NONE = 0;
+  MOVE = 1;
+  ATTACK = 2;
+  PORTAL = 3;
+  DROP = 4;
+  EQUIP = 5;
+  PICKUP = 6;
+}

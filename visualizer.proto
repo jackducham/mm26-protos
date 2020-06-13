@@ -1,13 +1,12 @@
 syntax = "proto3";
 
-package game;
+package player_communication;
 
 option java_package = "mech.mania.engine.server.communication.visualizer.model";
 option java_outer_classname = "VisualizerProtos";
 option csharp_namespace = "MM26.IO.Models";
 
 import "character.proto";
-import "enums.proto";
 
 message VisualizerChange {
     repeated string new_player_names = 1;
@@ -19,7 +18,7 @@ message CharacterChange {
     bool died = 1;
     bool respawned = 2;
 
-    DecisionType decisionType = 3;
+    character.DecisionType decisionType = 3;
 
     repeated character.Position path = 4;
 }
