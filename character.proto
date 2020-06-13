@@ -9,38 +9,38 @@ option csharp_namespace = "MM26.IO.Models";
 import "item.proto";
 
 message Character {
-    int32 current_health = 1;
-    int32 base_max_health = 2;
-    int32 experience = 3;
-    int32 level = 4;
-    int32 base_speed = 5;
-    Position position = 6;
-    Position spawn_point = 7;
-    item.Weapon weapon = 8;
-    repeated item.TempStatusModifier activeEffects = 9;
-    map<string, int32> tagged_players_damage = 10; // Maps from player name to damage
-    bool is_dead = 11;
-    int32 ticks_since_death = 12;
-    string name = 13;
+  int32 current_health = 1;
+  int32 base_max_health = 2;
+  int32 experience = 3;
+  int32 level = 4;
+  int32 base_speed = 5;
+  Position position = 6;
+  Position spawn_point = 7;
+  item.Weapon weapon = 8;
+  repeated item.TempStatusModifier active_effects = 9;
+  map<string, int32> tagged_players_damage = 10; // Maps from player name to damage
+  bool is_dead = 11;
+  int32 ticks_since_death = 12;
+  string name = 13;
 }
 
 message Monster {
-    Character character = 1;
-    repeated item.Item drops = 2;
+  Character character = 1;
+  repeated item.Item drops = 2;
 }
 
 message Player {
-    Character character = 1;
-    item.Hat hat = 2;
-    item.Clothes clothes = 3;
-    item.Shoes shoes = 4;
-    repeated item.Item inventory = 5;
+  Character character = 1;
+  item.Hat hat = 2;
+  item.Clothes clothes = 3;
+  item.Shoes shoes = 4;
+  repeated item.Item inventory = 5;
 }
 
 message Position {
-    string boardId = 1;
-    int32 x = 2;
-    int32 y = 3;
+  string board_id = 1;
+  int32 x = 2;
+  int32 y = 3;
 }
 
 // Proto sent from player to engine
