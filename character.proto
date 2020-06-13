@@ -42,21 +42,3 @@ message Position {
   int32 x = 2;
   int32 y = 3;
 }
-
-// Proto sent from player to engine
-message CharacterDecision {
-  DecisionType decisionType = 1;
-  
-  character.Position targetPosition = 2; // For MOVE, ATTACK
-  int32 index = 3; // For TRAVEL, DROP, EQUIP, PICKUP
-}
-
-enum DecisionType{
-  NONE = 0;
-  MOVE = 1;
-  ATTACK = 2;
-  PORTAL = 3;
-  DROP = 4;
-  EQUIP = 5;
-  PICKUP = 6;
-}
