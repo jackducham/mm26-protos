@@ -77,5 +77,5 @@ message TempStatusModifier {
   int32 flat_physical_damage_per_turn = 3;
   int32 flat_regen_per_turn = 4;
 
-  int32 duration = 5;
+  int32 turns_left = 5;
 }
