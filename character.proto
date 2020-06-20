@@ -22,6 +22,8 @@ message Character {
   bool is_dead = 11;
   int32 ticks_since_death = 12;
   string name = 13;
+  int32 base_attack = 14;
+  int32 base_defense = 15;
 }
 
 message Monster {
@@ -41,4 +43,14 @@ message Position {
   string board_id = 1;
   int32 x = 2;
   int32 y = 3;
+}
+
+enum DecisionType{
+  NONE = 0;
+  MOVE = 1;
+  ATTACK = 2;
+  PORTAL = 3;
+  DROP = 4;
+  EQUIP = 5;
+  PICKUP = 6;
 }
