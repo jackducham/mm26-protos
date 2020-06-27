@@ -20,8 +20,8 @@ message PlayerTurn {
 
 // Proto sent from player to engine
 message PlayerDecision {
-  character.DecisionType decisionType = 1;
-  
-  character.Position targetPosition = 2; // For MOVE, ATTACK
+  character.DecisionType decision_type = 1;
+
+  character.Position target_position = 2; // For MOVE, ATTACK
   int32 index = 3; // For TRAVEL, DROP, EQUIP, PICKUP
 }
