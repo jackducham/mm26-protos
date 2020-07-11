@@ -35,23 +35,40 @@ message Weapon {
   StatusModifier stats = 1;
   int32 range = 2;
   int32 splash_radius = 3;
-  TempStatusModifier on_hit_effect = 4;
+  int32 damage = 4;
+  TempStatusModifier on_hit_effect = 5;
 }
 
-message Consumable { TempStatusModifier stats = 1; }
+message Consumable { 
+  TempStatusModifier effect = 1; 
+  int32 stacks = 2;
+}
 
 message StatusModifier {
-  int32 speed_change = 1;
-  int32 health_change = 2;
-  int32 experience_change = 3;
-  int32 magic_damage_change = 4;
-  int32 physical_damage_change = 5;
-  int32 magic_defense_change = 6;
-  int32 physical_defense_change = 7;
+  int32 flat_speed_change = 1;
+  double percent_speed_change = 2;
+
+  int32 flat_health_change = 3;
+  double percent_health_change = 4;
+
+  int32 flat_experience_change = 5;
+  double percent_experience_change = 6;
+
+  int32 flat_damage_change = 7;
+  double percent_damage_change = 8;
+
+  int32 flat_defense_change = 9;
+  double percent_defense_change = 10;
+
+  int32 flat_regen_per_turn = 11;
 }
 
 message TempStatusModifier {
   StatusModifier stats = 1;
-  double damage_per_turn = 2;
-  int32 duration = 3;
+
+  int32 flat_damage_per_turn = 2;
+  double percent_damage_per_turn = 3;
+  int32 flat_regen_per_turn = 4;
+
+  int32 turns_left = 5;
 }
