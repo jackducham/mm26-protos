@@ -12,7 +12,7 @@ import "character.proto";
 // Proto sent from engine to player
 message PlayerTurn {
   game_state.GameState game_state = 1;
-  player_name = 2;
+  string player_name = 2;
 }
 
 // Proto sent from player to engine
