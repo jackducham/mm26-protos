@@ -12,10 +12,7 @@ import "character.proto";
 // Proto sent from engine to player
 message PlayerTurn {
   game_state.GameState game_state = 1;
-  oneof test{ // Testing sending info and how oneof's work
-    string test1 = 2;
-    int32 test2 = 3;
-  }
+  player_name = 2;
 }
 
 // Proto sent from player to engine
