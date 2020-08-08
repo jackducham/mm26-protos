@@ -39,6 +39,18 @@ message Player {
   repeated item.Item inventory = 5;
 }
 
+message PlayerStats {
+  int32 level = 1;
+  int32 experience = 2;
+  int32 monsters_slain = 3;
+  int32 attack = 4;
+  int32 defense = 5;
+  int32 current_health = 6;
+  int32 max_health = 7;
+  int32 death_count = 8;
+  int32 turns_since_joined = 9;
+}
+
 message Position {
   string board_id = 1;
   int32 x = 2;
