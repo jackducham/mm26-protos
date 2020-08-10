@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package player_communication;
 
-option java_package = "mech.mania.engine.server.communication.player.model";
+option java_package = "mech.mania.engine.domain.model";
 option java_outer_classname = "PlayerProtos";
 option csharp_namespace = "MM26.IO.Models";
 
@@ -12,10 +12,7 @@ import "character.proto";
 // Proto sent from engine to player
 message PlayerTurn {
   game_state.GameState game_state = 1;
-  oneof test{ // Testing sending info and how oneof's work
-    string test1 = 2;
-    int32 test2 = 3;
-  }
+  string player_name = 2;
 }
 
 // Proto sent from player to engine

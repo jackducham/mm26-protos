@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package item;
 
-option java_package = "mech.mania.engine.game.items";
+option java_package = "mech.mania.engine.domain.model";
 option java_outer_classname = "ItemProtos";
 option csharp_namespace = "MM26.IO.Models";
 
@@ -35,7 +35,7 @@ message Weapon {
   StatusModifier stats = 1;
   int32 range = 2;
   int32 splash_radius = 3;
-  int32 damage = 4;
+  int32 attack = 4;
   TempStatusModifier on_hit_effect = 5;
 }
 
@@ -54,8 +54,8 @@ message StatusModifier {
   int32 flat_experience_change = 5;
   double percent_experience_change = 6;
 
-  int32 flat_damage_change = 7;
-  double percent_damage_change = 8;
+  int32 flat_attack_change = 7;
+  double percent_attack_change = 8;
 
   int32 flat_defense_change = 9;
   double percent_defense_change = 10;
