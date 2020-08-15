@@ -15,5 +15,3 @@ message GameState {
   map<string, character.Player> player_names = 3;
   map<string, character.Monster> monster_names = 4;
 }
-
-message GameChange { int64 change_id = 1; }
