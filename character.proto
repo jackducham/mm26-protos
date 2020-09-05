@@ -52,7 +52,7 @@ message PlayerStats {
 }
 
 message PlayerStatsBundle {
-  repeated PlayerStats stats = 1;
+  map<string, PlayerStats> stats = 1;
 }
 
 message Position {
