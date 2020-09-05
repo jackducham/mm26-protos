@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package api;
+
+option java_package = "mech.mania.engine.domain.model";
+option java_outer_classname = "ApiProtos";
+option csharp_namespace = "MM26.IO.Models";
+
+import "character.proto";
+import "game_state.proto";
+
+message APIStatus {
+  int32 status = 1;
+  string message = 2;
+}
+
+message APIPathFindingRequest {
+  game_state.GameState gameState = 1;
+  character.Position start = 2;
+  character.Position end = 3;
+}
+
+message APIPathFindingResponse {
+  APIStatus status = 1;
+  repeated character.Position path = 2;
+}
+
+message APIFindEnemiesRequest {
+  game_state.GameState gameState = 1;
+  string player_name = 2;
+}
+
+message APIFindEnemiesResponse {
+  APIStatus status = 1;
+  repeated character.Character enemies = 2;
+}
+
+message APIFindMonstersRequest {
+  game_state.GameState gameState = 1;
+  string player_name = 2;
+}
+
+message APIFindMonstersResponse {
+  APIStatus status = 1;
+  repeated character.Monster monsters = 2;
+}
+
+message APIFindEnemiesInRangeRequest {
+  game_state.GameState gameState = 1;
+  string player_name = 2;
+}
+
+message APIFindEnemiesInRangeResponse {
+  APIStatus status = 1;
+  repeated character.Character enemies = 2;
+}
+
+message APICanBeAttackedRequest {
+  game_state.GameState gameState = 1;
+  string player_name = 2;
+}
+
+message APICanBeAttackedResponse {
+  APIStatus status = 1;
+  bool canBeAttacked = 2;
+}
+
+message APIFindClosestPortalRequest {
+  game_state.GameState gameState = 1;
+  string player_name = 2;
+}
+
+message APIFindClosestPortalResponse {
+  APIStatus status = 1;
+  character.Position portal = 2;
+}
+
+message APILeaderBoardRequest {
+  game_state.GameState gameState = 1;
+}
+
+message APILeaderBoardResponse {
+  APIStatus status = 1;
+  repeated character.Player leaderBoard = 2;
+}
+
+message APIAllEnemiesHitRequest {
+  game_state.GameState gameState = 1;
+  string player_name = 2;
+  character.Position target_spot = 3;
+}
+
+message APIAllEnemiesHitResponse {
+  APIStatus status = 1;
+  repeated character.Character enemies_hit = 2;
+}
