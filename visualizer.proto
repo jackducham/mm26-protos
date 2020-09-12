@@ -19,26 +19,31 @@ message VisualizerTurn {
 
 message GameChange {
   repeated string new_player_names = 1;
-  map<string, CharacterChange> character_stat_changes = 2;
+  map<string, CharacterChange> character_changes = 2;
+
+  // Visualizer will check each tile and draw a treasure chest
+  // if there are any items there
+  repeated character.Position tile_time_changes = 3;
 }
 
 message CharacterChange {
   bool died = 1;
   bool respawned = 2;
 
-  character.DecisionType decision_type = 3;
+  // Visualizer will have to check for decisions:
+  // - ATTACK: must know where the attack was to put animation
+  // - PORTAL: must know where they went to (check this Character's location)
+  character.CharacterDecision decision = 3;
 
+  // If successful MOVE decision was made, this will not be null
   repeated character.Position path = 4;
 
-  bool healthChanged = 5;
-  bool maxHealthChanged = 6;
-  bool experienceChanged = 7;
-  bool levelChanged = 8;
+  // If successful EQUIP decision was made, one of these will be true
+  bool hat_changed = 5;
+  bool clothes_changed = 6;
+  bool shoes_changed = 7;
+  bool weapon_changed = 8;
 
-  bool hatChanged = 9;
-  bool clothesChanged = 10;
-  bool shoesChanged = 11;
-  bool weaponChanged = 12;
-
-  repeated character.Position attackLocations = 13;
+  // If successful ATTACK decision was made, this will not be null
+  repeated character.Position attack_locations = 13;
 }
