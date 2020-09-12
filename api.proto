@@ -7,7 +7,7 @@ option java_outer_classname = "ApiProtos";
 option csharp_namespace = "MM26.IO.Models";
 
 import "character.proto";
-import "game_state.proto";
+import "game.proto";
 
 message APIStatus {
   int32 status = 1;
@@ -15,7 +15,7 @@ message APIStatus {
 }
 
 message APIPathFindingRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
   character.Position start = 2;
   character.Position end = 3;
 }
@@ -26,7 +26,7 @@ message APIPathFindingResponse {
 }
 
 message APIFindEnemiesRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
   string player_name = 2;
 }
 
@@ -36,7 +36,7 @@ message APIFindEnemiesResponse {
 }
 
 message APIFindMonstersRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
   string player_name = 2;
 }
 
@@ -46,7 +46,7 @@ message APIFindMonstersResponse {
 }
 
 message APIFindEnemiesInRangeRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
   string player_name = 2;
 }
 
@@ -56,7 +56,7 @@ message APIFindEnemiesInRangeResponse {
 }
 
 message APICanBeAttackedRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
   string player_name = 2;
 }
 
@@ -66,7 +66,7 @@ message APICanBeAttackedResponse {
 }
 
 message APIFindClosestPortalRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
   string player_name = 2;
 }
 
@@ -76,7 +76,7 @@ message APIFindClosestPortalResponse {
 }
 
 message APILeaderBoardRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
 }
 
 message APILeaderBoardResponse {
@@ -85,7 +85,7 @@ message APILeaderBoardResponse {
 }
 
 message APIAllEnemiesHitRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
   string player_name = 2;
   character.Position target_spot = 3;
 }
