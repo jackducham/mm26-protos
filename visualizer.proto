@@ -7,6 +7,7 @@ option java_outer_classname = "VisualizerProtos";
 option csharp_namespace = "MM26.IO.Models";
 
 import "game.proto";
+import "character.proto";
 
 message VisualizerInitial {
   game.GameState state = 1;
@@ -14,7 +15,7 @@ message VisualizerInitial {
 
 message VisualizerTurn {
   game.GameState state = 1;
-  game.GameChange change = 2;
+  GameChange change = 2;
 }
 
 message GameChange {
@@ -45,5 +46,5 @@ message CharacterChange {
   bool weapon_changed = 8;
 
   // If successful ATTACK decision was made, this will not be null
-  repeated character.Position attack_locations = 13;
+  repeated character.Position attack_locations = 9;
 }
