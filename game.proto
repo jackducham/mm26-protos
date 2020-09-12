@@ -28,4 +28,16 @@ message CharacterChange {
   character.DecisionType decision_type = 3;
 
   repeated character.Position path = 4;
+
+  bool healthChanged = 5;
+  bool maxHealthChanged = 6;
+  bool experienceChanged = 7;
+  bool levelChanged = 8;
+
+  bool hatChanged = 9;
+  bool clothesChanged = 10;
+  bool shoesChanged = 11;
+  bool weaponChanged = 12;
+
+  repeated character.Position attackLocations = 13;
 }
