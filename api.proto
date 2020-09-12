@@ -8,6 +8,7 @@ option csharp_namespace = "MM26.IO.Models";
 
 import "character.proto";
 import "game_state.proto";
+import "item.proto";
 
 message APIStatus {
   int32 status = 1;
@@ -93,4 +94,15 @@ message APIAllEnemiesHitRequest {
 message APIAllEnemiesHitResponse {
   APIStatus status = 1;
   repeated character.Character enemies_hit = 2;
+}
+
+message APIItemsInRangeRequest {
+  game_state.GameState gameState = 1;
+  string player_name = 2;
+  int32 range = 3;
+}
+
+message APIItemsInRangeResponse {
+  APIStatus status = 1;
+  repeated item.Item items = 2;
 }
