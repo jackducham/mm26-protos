@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package game_state;
+package game;
 
 option java_package = "mech.mania.engine.domain.model";
 option java_outer_classname = "GameStateProtos";
@@ -14,4 +14,18 @@ message GameState {
   map<string, board.Board> board_names = 2;
   map<string, character.Player> player_names = 3;
   map<string, character.Monster> monster_names = 4;
+}
+
+message GameChange {
+  repeated string new_player_names = 1;
+  map<string, CharacterChange> character_stat_changes = 2;
+}
+
+message CharacterChange {
+  bool died = 1;
+  bool respawned = 2;
+
+  character.DecisionType decision_type = 3;
+
+  repeated character.Position path = 4;
 }

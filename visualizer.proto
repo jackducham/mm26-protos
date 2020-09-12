@@ -6,18 +6,13 @@ option java_package = "mech.mania.engine.domain.model";
 option java_outer_classname = "VisualizerProtos";
 option csharp_namespace = "MM26.IO.Models";
 
-import "character.proto";
+import "game.proto";
 
-message GameChange {
-  repeated string new_player_names = 1;
-  map<string, CharacterChange> character_stat_changes = 2;
+message VisualizerInitial {
+  game.GameState state = 1;
 }
 
-message CharacterChange {
-  bool died = 1;
-  bool respawned = 2;
-
-  character.DecisionType decision_type = 3;
-
-  repeated character.Position path = 4;
+message VisualizerTurn {
+  game.GameState state = 1;
+  game.GameChange change = 2;
 }

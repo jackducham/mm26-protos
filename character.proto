@@ -17,13 +17,18 @@ message Character {
   Position position = 6;
   Position spawn_point = 7;
   item.Weapon weapon = 8;
-  repeated item.TempStatusModifier active_effects = 9;
-  map<string, int32> tagged_players_damage = 10; // Maps from player name to damage
-  bool is_dead = 11;
-  int32 ticks_since_death = 12;
-  string name = 13;
-  int32 base_attack = 14;
-  int32 base_defense = 15;
+
+  // Parallel arrays to be stored as a triple
+  repeated item.TempStatusModifier active_effects_temp_status_modifier = 9;
+  repeated string active_effects_source = 10;
+  repeated bool active_effects_is_player = 11;
+
+  map<string, int32> tagged_players_damage = 12; // Maps from player name to damage
+  bool is_dead = 13;
+  int32 ticks_since_death = 14;
+  string name = 15;
+  int32 base_attack = 16;
+  int32 base_defense = 17;
 }
 
 message Monster {
