@@ -16,3 +16,29 @@ message VisualizerTurn {
   game.GameState state = 1;
   game.GameChange change = 2;
 }
+
+message GameChange {
+  repeated string new_player_names = 1;
+  map<string, CharacterChange> character_stat_changes = 2;
+}
+
+message CharacterChange {
+  bool died = 1;
+  bool respawned = 2;
+
+  character.DecisionType decision_type = 3;
+
+  repeated character.Position path = 4;
+
+  bool healthChanged = 5;
+  bool maxHealthChanged = 6;
+  bool experienceChanged = 7;
+  bool levelChanged = 8;
+
+  bool hatChanged = 9;
+  bool clothesChanged = 10;
+  bool shoesChanged = 11;
+  bool weaponChanged = 12;
+
+  repeated character.Position attackLocations = 13;
+}
