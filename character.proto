@@ -75,3 +75,11 @@ enum DecisionType{
   EQUIP = 5;
   PICKUP = 6;
 }
+
+// Proto sent from player to engine and from engine to visualizer
+message CharacterDecision {
+  character.DecisionType decision_type = 1;
+
+  character.Position target_position = 2; // For MOVE, ATTACK
+  int32 index = 3; // For TRAVEL, DROP, EQUIP, PICKUP
+}
