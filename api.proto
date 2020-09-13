@@ -7,7 +7,7 @@ option java_outer_classname = "ApiProtos";
 option csharp_namespace = "MM26.IO.Models";
 
 import "character.proto";
-import "game_state.proto";
+import "game.proto";
 import "item.proto";
 
 message APIStatus {
@@ -97,7 +97,7 @@ message APIAllEnemiesHitResponse {
 }
 
 message APIItemsInRangeRequest {
-  game_state.GameState gameState = 1;
+  game.GameState gameState = 1;
   string player_name = 2;
   int32 range = 3;
 }
