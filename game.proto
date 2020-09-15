@@ -15,17 +15,3 @@ message GameState {
   map<string, character.Player> player_names = 3;
   map<string, character.Monster> monster_names = 4;
 }
-
-message GameChange {
-  repeated string new_player_names = 1;
-  map<string, CharacterChange> character_stat_changes = 2;
-}
-
-message CharacterChange {
-  bool died = 1;
-  bool respawned = 2;
-
-  character.DecisionType decision_type = 3;
-
-  repeated character.Position path = 4;
-}

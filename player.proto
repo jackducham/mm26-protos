@@ -7,18 +7,9 @@ option java_outer_classname = "PlayerProtos";
 option csharp_namespace = "MM26.IO.Models";
 
 import "game.proto";
-import "character.proto";
 
 // Proto sent from engine to player
 message PlayerTurn {
   game.GameState game_state = 1;
   string player_name = 2;
-}
-
-// Proto sent from player to engine
-message PlayerDecision {
-  character.DecisionType decision_type = 1;
-
-  character.Position target_position = 2; // For MOVE, ATTACK
-  int32 index = 3; // For TRAVEL, DROP, EQUIP, PICKUP
 }

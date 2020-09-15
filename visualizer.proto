@@ -7,6 +7,7 @@ option java_outer_classname = "VisualizerProtos";
 option csharp_namespace = "MM26.IO.Models";
 
 import "game.proto";
+import "character.proto";
 
 message VisualizerInitial {
   game.GameState state = 1;
@@ -14,5 +15,36 @@ message VisualizerInitial {
 
 message VisualizerTurn {
   game.GameState state = 1;
-  game.GameChange change = 2;
+  GameChange change = 2;
+}
+
+message GameChange {
+  repeated string new_player_names = 1;
+  map<string, CharacterChange> character_changes = 2;
+
+  // Visualizer will check each tile and draw a treasure chest
+  // if there are any items there
+  repeated character.Position tile_time_changes = 3;
+}
+
+message CharacterChange {
+  bool died = 1;
+  bool respawned = 2;
+
+  // Visualizer will have to check for decisions:
+  // - ATTACK: must know where the attack was to put animation
+  // - PORTAL: must know where they went to (check this Character's location)
+  character.CharacterDecision decision = 3;
+
+  // If successful MOVE decision was made, this will not be null
+  repeated character.Position path = 4;
+
+  // If successful EQUIP decision was made, one of these will be true
+  bool hat_changed = 5;
+  bool clothes_changed = 6;
+  bool shoes_changed = 7;
+  bool weapon_changed = 8;
+
+  // If successful ATTACK decision was made, this will not be null
+  repeated character.Position attack_locations = 9;
 }
