@@ -29,6 +29,9 @@ message Character {
   string name = 15;
   int32 base_attack = 16;
   int32 base_defense = 17;
+
+  // Filepath to sprite for this character
+  string sprite = 18;
 }
 
 message Monster {

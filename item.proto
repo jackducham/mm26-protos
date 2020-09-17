@@ -17,6 +17,9 @@ message Item {
     Weapon weapon = 6;
     Consumable consumable = 7;
   }
+
+  // Filepath to sprite for this item
+  string sprite = 8;
 }
 
 message Clothes { StatusModifier stats = 1; }
