@@ -26,49 +26,76 @@ message APIPathFindingResponse {
   repeated character.Position path = 2;
 }
 
-message APIFindEnemiesRequest {
+message APIFindEnemiesByDistanceRequest {
   game.GameState gameState = 1;
-  string player_name = 2;
+  character.Position position = 2;
+  string player_name = 3;
 }
 
-message APIFindEnemiesResponse {
+message APIFindEnemiesByDistanceResponse {
   APIStatus status = 1;
   repeated character.Character enemies = 2;
 }
 
-message APIFindMonstersRequest {
+message APIFindMonstersByExpRequest {
   game.GameState gameState = 1;
-  string player_name = 2;
+  character.Position position = 2;
 }
 
-message APIFindMonstersResponse {
+message APIFindMonstersByExpResponse {
   APIStatus status = 1;
   repeated character.Monster monsters = 2;
 }
 
-message APIFindEnemiesInRangeRequest {
+message APIFindItemsInRangeByDistanceRequest {
   game.GameState gameState = 1;
-  string player_name = 2;
+  character.Position position = 2;
+  string player_name = 3;
+  int32 range = 4;
 }
 
-message APIFindEnemiesInRangeResponse {
+message APIFindItemsInRangeByDistanceResponse {
+  APIStatus status = 1;
+  repeated item.Item items = 2;
+  repeated character.Position positions = 3;
+}
+
+message APIFindEnemiesInRangeOfAttackByDistanceRequest {
+  game.GameState gameState = 1;
+  character.Position position = 2;
+  string player_name = 3;
+}
+
+message APIFindEnemiesInRangeOfAttackByDistanceResponse {
   APIStatus status = 1;
   repeated character.Character enemies = 2;
 }
 
-message APICanBeAttackedRequest {
+message APIFindAllEnemiesHitRequest {
   game.GameState gameState = 1;
-  string player_name = 2;
+  character.Position position = 2;
+  string player_name = 3;
 }
 
-message APICanBeAttackedResponse {
+message APIFindAllEnemiesHitResponse {
   APIStatus status = 1;
-  bool canBeAttacked = 2;
+  repeated character.Character enemies_hit = 2;
+}
+
+message APIInRangeOfAttackRequest {
+  game.GameState gameState = 1;
+  character.Position position = 2;
+  string player_name = 3;
+}
+
+message APIInRangeOfAttackResponse {
+  APIStatus status = 1;
+  bool inRangeOfAttack = 2;
 }
 
 message APIFindClosestPortalRequest {
   game.GameState gameState = 1;
-  string player_name = 2;
+  character.Position position = 2;
 }
 
 message APIFindClosestPortalResponse {
@@ -83,26 +110,4 @@ message APILeaderBoardRequest {
 message APILeaderBoardResponse {
   APIStatus status = 1;
   repeated character.Player leaderBoard = 2;
-}
-
-message APIAllEnemiesHitRequest {
-  game.GameState gameState = 1;
-  string player_name = 2;
-  character.Position target_spot = 3;
-}
-
-message APIAllEnemiesHitResponse {
-  APIStatus status = 1;
-  repeated character.Character enemies_hit = 2;
-}
-
-message APIItemsInRangeRequest {
-  game.GameState gameState = 1;
-  string player_name = 2;
-  int32 range = 3;
-}
-
-message APIItemsInRangeResponse {
-  APIStatus status = 1;
-  repeated item.Item items = 2;
 }
