@@ -24,7 +24,7 @@ message GameChange {
 
   // Visualizer will check each tile and draw a treasure chest
   // if there are any items there
-  repeated character.Position tile_time_changes = 3;
+  repeated character.Position tile_item_changes = 3;
 }
 
 message CharacterChange {
