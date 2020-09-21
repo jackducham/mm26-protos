@@ -27,6 +27,7 @@ message Tile {
   TileType tile_type = 1;
   repeated item.Item items = 2;
 
-  // Filepath to sprite for this tile
-  string sprite = 3;
+  // Filepaths to sprites for this tile
+  string ground_sprite = 3;
+  string above_sprite = 4;
 }
