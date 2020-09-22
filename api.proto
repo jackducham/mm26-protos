@@ -71,6 +71,18 @@ message APIFindEnemiesInRangeOfAttackByDistanceResponse {
   repeated character.Character enemies = 2;
 }
 
+message APIFindEnemiesInRangeByDistanceRequest {
+  game.GameState gameState = 1;
+  character.Position position = 2;
+  string player_name = 3;
+  int32 range = 4;
+}
+
+message APIFindEnemiesInRangeByDistanceResponse {
+  APIStatus status = 1;
+  repeated character.Character enemies = 2;
+}
+
 message APIFindAllEnemiesHitRequest {
   game.GameState gameState = 1;
   character.Position position = 2;
@@ -110,4 +122,16 @@ message APILeaderBoardRequest {
 message APILeaderBoardResponse {
   APIStatus status = 1;
   repeated character.Player leaderBoard = 2;
+}
+
+message APIGetPositionInRangeRequest {
+  game.GameState gameState = 1;
+  character.Position currentPosition = 2;
+  character.Position targetPosition = 3;
+  int32 range = 4;
+}
+
+message APIGetPositionInRangeResponse {
+  APIStatus status = 1;
+  character.Position position = 2;
 }
