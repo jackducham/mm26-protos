@@ -34,6 +34,7 @@ message Character {
 message Monster {
   Character character = 1;
   repeated item.Item drops = 2;
+  int32 aggro_range = 3;
 }
 
 message Player {
