@@ -45,7 +45,8 @@ message Player {
   item.Hat hat = 2;
   item.Clothes clothes = 3;
   item.Shoes shoes = 4;
-  repeated item.Item inventory = 5;
+  item.Accessory accessory = 5;
+  repeated item.Item inventory = 6;
 }
 
 message PlayerStats {
