@@ -8,8 +8,6 @@ option csharp_namespace = "MM26.IO.Models";
 
 message Item {
   // Stand-in for inheritance
-  int32 max_stack = 1;
-  StatusModifier stats = 2;
   oneof item {
     Clothes clothes = 3;
     Hat hat = 4;
@@ -19,29 +17,53 @@ message Item {
   }
 }
 
-message Clothes { StatusModifier stats = 1; }
+message Clothes {
+  int32 max_stack = 1;
+  StatusModifier stats = 2;
+  
+  // Filepath to sprite for this item
+  string sprite = 3;
+}
 
 message Hat {
   enum HatEffect {
     TEST = 0; // TOOD: add actual hat effects
   }
-  StatusModifier stats = 1;
-  HatEffect hat_effect = 2;
+
+  int32 max_stack = 1;
+  StatusModifier stats = 2;
+  HatEffect hat_effect = 3;
+
+  // Filepath to sprite for this item
+  string sprite = 4;
 }
 
-message Shoes { StatusModifier stats = 1; }
+message Shoes { 
+  int32 max_stack = 1;
+  StatusModifier stats = 2; 
+  // Filepath to sprite for this item
+  string sprite = 3;
+}
 
 message Weapon {
-  StatusModifier stats = 1;
-  int32 range = 2;
-  int32 splash_radius = 3;
-  int32 attack = 4;
-  TempStatusModifier on_hit_effect = 5;
+  int32 max_stack = 1;
+  StatusModifier stats = 2;
+  int32 range = 3;
+  int32 splash_radius = 4;
+  int32 attack = 5;
+  TempStatusModifier on_hit_effect = 6;
+
+  // Filepath to sprite for this item
+  string sprite = 7;
 }
 
 message Consumable { 
-  TempStatusModifier effect = 1; 
-  int32 stacks = 2;
+  int32 max_stack = 1;
+  TempStatusModifier effect = 2; 
+  int32 stacks = 3;
+
+  // Filepath to sprite for this item
+  string sprite = 4;
 }
 
 message StatusModifier {
