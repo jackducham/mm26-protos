@@ -45,12 +45,13 @@ message Player {
   item.Hat hat = 2;
   item.Clothes clothes = 3;
   item.Shoes shoes = 4;
-  repeated item.Item inventory = 5;
-
+  item.Accessory accessory = 5;
+  repeated item.Item inventory = 6;
+  
   // Filepaths for other sprites
-  string bottom_sprite = 6;
-  string top_sprite = 7;
-  string head_sprite = 8;
+  string bottom_sprite = 7;
+  string top_sprite = 8;
+  string head_sprite = 9;
 }
 
 message PlayerStats {

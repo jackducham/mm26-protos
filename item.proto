@@ -14,6 +14,7 @@ message Item {
     Shoes shoes = 5;
     Weapon weapon = 6;
     Consumable consumable = 7;
+    Accessory accessory = 8;
   }
 }
 
@@ -25,17 +26,29 @@ message Clothes {
   string sprite = 3;
 }
 
-message Hat {
-  enum HatEffect {
-    TEST = 0; // TOOD: add actual hat effects
-  }
+enum MagicEffect {
+  LINGERING_POTIONS = 0;
+  SHOES_BOOST = 1;
+  CLOTHES_BOOST = 2;
+  WEAPON_BOOST = 3;
+  TRIPLED_ON_HIT = 4;
+  STACKING_BONUS = 5;
+  NONE = 6;
+}
 
+message Hat {
   int32 max_stack = 1;
   StatusModifier stats = 2;
-  HatEffect hat_effect = 3;
+  MagicEffect magic_effect = 3;
 
   // Filepath to sprite for this item
   string sprite = 4;
+}
+
+message Accessory {
+  int32 max_stack = 1;
+  StatusModifier stats = 2;
+  MagicEffect magic_effect = 3;
 }
 
 message Shoes { 
