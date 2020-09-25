@@ -49,6 +49,9 @@ message Accessory {
   int32 max_stack = 1;
   StatusModifier stats = 2;
   MagicEffect magic_effect = 3;
+  
+  // Filepath to sprite for this item
+  string sprite = 4;
 }
 
 message Shoes { 
