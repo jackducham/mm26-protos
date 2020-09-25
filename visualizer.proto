@@ -44,7 +44,8 @@ message CharacterChange {
   bool clothes_changed = 6;
   bool shoes_changed = 7;
   bool weapon_changed = 8;
+  bool accessory_changed = 9;
 
   // If successful ATTACK decision was made, this will not be null
-  repeated character.Position attack_locations = 9;
+  repeated character.Position attack_locations = 10;
 }
