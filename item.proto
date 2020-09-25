@@ -24,6 +24,8 @@ message Clothes {
   
   // Filepath to sprite for this item
   string sprite = 3;
+
+  int32 turns_to_deletion = 4;
 }
 
 enum MagicEffect {
@@ -43,6 +45,8 @@ message Hat {
 
   // Filepath to sprite for this item
   string sprite = 4;
+
+  int32 turns_to_deletion = 5;
 }
 
 message Accessory {
@@ -52,6 +56,8 @@ message Accessory {
   
   // Filepath to sprite for this item
   string sprite = 4;
+
+  int32 turns_to_deletion = 5;
 }
 
 message Shoes { 
@@ -59,6 +65,8 @@ message Shoes {
   StatusModifier stats = 2; 
   // Filepath to sprite for this item
   string sprite = 3;
+
+  int32 turns_to_deletion = 4;
 }
 
 message Weapon {
@@ -71,6 +79,8 @@ message Weapon {
 
   // Filepath to sprite for this item
   string sprite = 7;
+
+  int32 turns_to_deletion = 8;
 }
 
 message Consumable { 
@@ -80,6 +90,8 @@ message Consumable {
 
   // Filepath to sprite for this item
   string sprite = 4;
+
+  int32 turns_to_deletion = 6;
 }
 
 message StatusModifier {
