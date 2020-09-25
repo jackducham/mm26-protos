@@ -10,8 +10,8 @@ import "item.proto";
 import "character.proto";
 
 message Board {
-  int32 rows = 1;
-  int32 columns = 2;
+  int32 width = 1;
+  int32 height = 2;
   repeated Tile grid = 3; // Protos only have 1D lists (row-major)
   repeated character.Position portals = 4;
 }

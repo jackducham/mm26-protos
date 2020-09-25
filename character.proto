@@ -47,6 +47,11 @@ message Player {
   item.Shoes shoes = 4;
   item.Accessory accessory = 5;
   repeated item.Item inventory = 6;
+  
+  // Filepaths for other sprites
+  string bottom_sprite = 7;
+  string top_sprite = 8;
+  string head_sprite = 9;
 }
 
 message PlayerStats {
